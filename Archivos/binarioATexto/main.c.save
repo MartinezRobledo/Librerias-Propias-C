@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define PARAM_BIN 1
+#define PARAM_TXT 2
+#define PARAM_FORMATO 3
+#define ERR_ARCH -1
+
+typedef struct{
+int dia;
+int mes;
+int anio;
+}T_Fecha;
+
+typedef struct
+{
+    int clave;
+    Fecha fecVenc;
+    Fecha fecComp;
+    char desc[20];
+    char proov[20];
+    int cant;
+    float precioC;
+    float precioV;
+}
+Producto;
+
+int main(int argc, char*argv[]) {
+    FILE* archBin=fopen(argv[PARAM_BIN],"rb");
+    FILE* archTxt=fopen(argv[PARAM_TXT],"wt");
+
+    if(!archBin||!archTxt) {
+        puts("Error de apertura");
+        return ERR_ARCH;
+    }
+    char* formato;
+    if(argv[PARAM_FORMATO]=='v')
+        formato="%d|%s|%c|%d/%d/%d|%.2f\n";
+    else
+        formato="%08d%-200s%c%02d%02d%04d%010.2f\n";
+    Producto prod;
+
+    fread(&prod,sizeof(T_Empleado),1,archBin);
+    while(!feof(archBin)) {
+        fprintf(archTxt,formato,empleadoLectura.dni,empleadoLectura.apyn,empleadoLectura.sexo,empleadoLectura.fNac.dia,empleadoLectura.fNac.mes,empleadoLectura.fNac.anio,empleadoLectura.sueldo);//Dinamico
+        fread(&empleadoLectura,sizeof(T_Empleado),1,archBin);
+    }
+    fclose(archBin);
+    fclose(archTxt);
+    return 0;
+}

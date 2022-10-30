@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1651501375 source:c:\users\laboratorios\desktop\ejclse\pila\funciones.c
+	"macros.h"
+
+1651501375 c:\users\laboratorios\desktop\ejclse\pila\macros.h
+	<stdio.h>
+	<stdlib.h>
+	<memory.h>
+	<math.h>
+
+1651501403 source:c:\users\laboratorios\desktop\ejclse\pila\main.c
+	"macros.h"
+
