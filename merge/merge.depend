@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1650585248 source:e:\programacion\librerias_propias\merge\merge.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"merge.h"
+
+1650556446 e:\programacion\librerias_propias\merge\merge.h
+	"../Comun/Comun.h"
+
+1650554121 e:\programacion\librerias_propias\comun\comun.h
+

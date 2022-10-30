@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1649546594 source:e:\programacion\librerias_propias\fecha\fecha.c
+	"Fecha.h"
+	<math.h>
+
+1649546664 e:\programacion\librerias_propias\fecha\fecha.h
+

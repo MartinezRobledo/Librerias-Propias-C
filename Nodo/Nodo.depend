@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1652966118 source:e:\programacion\librerias_propias\nodo\nodo.c
+	"Nodo.h"
+
+1654381626 e:\programacion\librerias_propias\nodo\nodo.h
+	<stddef.h>
+	<stdlib.h>
+	<memory.h>
+	"../Comun/comun.h"
+
+1652966396 e:\programacion\librerias_propias\comun\comun.h
+

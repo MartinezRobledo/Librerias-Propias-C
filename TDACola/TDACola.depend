@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1652465433 source:e:\programacion\librerias_propias\tdacola\tdaimplcolaestatica.c
+	"TDACola.h"
+
+1652465146 e:\programacion\librerias_propias\tdacola\tdacola.h
+	"TDAImplColaEstatica.h"
+	"TDAImplColaDinamica.h"
+	<memory.h>
+
+1652474315 e:\programacion\librerias_propias\tdacola\tdaimplcolaestatica.h
+	<stddef.h>
+
+1652474283 e:\programacion\librerias_propias\tdacola\tdaimplcoladinamica.h
+
+1652474339 source:e:\programacion\librerias_propias\tdacola\pruebacolaest.c
+	"TDAImplColaEstatica.h"
+

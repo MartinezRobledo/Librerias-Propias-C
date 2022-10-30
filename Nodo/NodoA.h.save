@@ -1,0 +1,13 @@
+#ifndef NODOA_H
+#define NODOA_H
+
+typedef struct SNodoA
+{
+    void* elem;
+    size_t tamElem;
+    struct SNodoA* hIzq;
+    struct SNodo* hDer;
+}
+NodoA;
+
+#endif // NODOA_H

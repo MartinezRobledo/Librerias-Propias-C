@@ -1,0 +1,31 @@
+#ifndef FECHA_H
+#define FECHA_H
+
+#define ANIO_BASE 1601
+#define FECHA_BASE
+
+typedef struct
+{
+    int dia;
+    int mes;
+    int anio;
+}
+Fecha;
+
+typedef enum
+{
+    FALSO, VERDADERO
+}
+booleano;
+
+booleano esFechaValida(Fecha fecha);
+int manianaEs(Fecha fecha);
+Fecha sumarDiasAFecha(const Fecha* f, int cd);
+int difEnDiasEntreFechas(const Fecha* f1, const Fecha* f2);
+Fecha restarDiasAFecha(const Fecha* f, int cd);
+int diaDeLaSemana(Fecha* fecha);
+
+int cantidadDeAniosBisiestos(int anio);
+int convertirFechaEnDias(const Fecha* fecha);
+
+#endif // FECHA_H

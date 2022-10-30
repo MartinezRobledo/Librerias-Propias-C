@@ -1,0 +1,119 @@
+#include "Fecha.h"
+#include <math.h>
+#define esBisiesto(anio) (((anio) % 4 == 0 && (anio) % 100 != 0) || (anio) % 400 == 0)
+
+int cantDiasMes(int mes, int anio);
+
+booleano esFechaValida(Fecha fecha)
+{
+    if(fecha.anio >= ANIO_BASE)
+    {
+        if(fecha.mes >= 1 && fecha.mes <= 12)
+        {
+            if(fecha.dia >= 1 && fecha.dia <= cantDiasMes(fecha.mes,fecha.anio))
+                return VERDADERO;
+        }
+    }
+    return FALSO;
+}
+
+int manianaEs(Fecha fecha)
+{
+    if(fecha.dia==cantDiasMes(fecha.mes,fecha.anio))
+    {
+        if(fecha.mes==12)
+        {
+            fecha.dia = 1;
+            fecha.mes = 1;
+            fecha.anio ++;
+            return 0;
+        }
+        fecha.dia = 1;
+        fecha.mes ++;
+        return 0;
+    }
+    fecha.dia ++;
+    return 0;
+}
+
+int cantDiasMes(int mes, int anio)
+{
+    const static int cdm[] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
+
+    if(mes == 2 && esBisiesto(anio))
+        return 29;
+    return cdm[mes];
+}
+
+Fecha sumarDiasAFecha(const Fecha* f, int cd)
+{
+    Fecha fSuma = *f;
+    int cdm;
+    fSuma.dia += cd;
+
+    while(fSuma.dia > (cdm = cantDiasMes(fSuma.mes, fSuma.anio)))
+    {
+        fSuma.dia -= cdm;
+        fSuma.anio += fSuma.mes/12;
+        fSuma.mes = (fSuma.mes % 12) + 1;
+    }
+    return fSuma;
+}
+
+Fecha restarDiasAFecha(const Fecha* f, int cd)
+{
+    Fecha fResta = *f;
+    fResta.dia -= cd;
+
+    while(fResta.dia < 1)
+    {
+        fResta.anio -= 1/fResta.mes;
+        fResta.mes = (fResta.mes - 1) + 12*(1/fResta.mes);
+        fResta.dia += cantDiasMes(fResta.mes, fResta.anio);
+    }
+    return fResta;
+}
+
+int cantidadDeAniosBisiestos(int anio)
+{
+    int bisiestos = (anio/4)-(anio/100) + (anio/400);
+
+    return bisiestos;
+}
+
+int convertirFechaEnDias(const Fecha* fecha)
+{
+    int dias = fecha->dia;
+
+    for(int i = 1; i < fecha->mes; i++)
+    {
+        dias += cantDiasMes(i,fecha->anio);
+    }
+
+    dias += (fecha->anio) * 365 + cantidadDeAniosBisiestos(fecha->anio);
+
+    return dias;
+}
+
+int difEnDiasEntreFechas(const Fecha* f1, const Fecha* f2)
+{
+    int fecha1 = convertirFechaEnDias(f1);
+    int fecha2 = convertirFechaEnDias(f2);
+
+    return fabs(fecha1-fecha2);
+}
+
+int diaDeLaSemana(Fecha* fecha)
+{
+    Fecha fechaBase;
+
+    fechaBase.dia = 1;
+    fechaBase.mes = 1;
+    fechaBase.anio = ANIO_BASE;
+
+    printf("%d\n" ,difEnDiasEntreFechas(fecha, &fechaBase));
+
+    int dif = difEnDiasEntreFechas(fecha, &fechaBase);
+
+    return ((dif % 7) + 1) - 7*((dif % 7)/6);
+}

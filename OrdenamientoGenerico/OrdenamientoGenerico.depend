@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1651154486 source:e:\programacion\librerias_propias\ordenamientogenerico\ordenamiento.c
+	"ordenamiento.h"
+
+1651154583 e:\programacion\librerias_propias\ordenamientogenerico\ordenamiento.h
+	<stdlib.h>
+	<stdio.h>
+	<stddef.h>
+	<memory.h>
+

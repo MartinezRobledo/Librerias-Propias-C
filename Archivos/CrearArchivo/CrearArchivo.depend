@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1654469004 source:e:\programacion\librerias_propias\archivos\creararchivo\crear.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

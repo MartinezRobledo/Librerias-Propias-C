@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1650583202 source:e:\programacion\librerias_propias\mistring\mistring.c
+	"miString.h"
+	<stdio.h>
+
+1650180119 e:\programacion\librerias_propias\mistring\mistring.h
+	"../Comun/comun.h"
+
+1650554121 e:\programacion\librerias_propias\comun\comun.h
+

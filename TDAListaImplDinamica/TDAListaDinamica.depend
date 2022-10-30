@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1654246404 source:e:\programacion\librerias_propias\tdalistaimpldinamica\tdalistaimpldinamica.c
+	"../TDALista/TDALista.h"
+
+1654246036 e:\programacion\librerias_propias\tdalista\tdalista.h
+	"../Comun/comun.h"
+	<stdlib.h>
+	<string.h>
+	"../TDAListaImplEstatica/TDAListaImplEstatica.h"
+	"../TDAListaImplDinamica/TDAListaImplDinamica.h"
+
+1654382453 e:\programacion\librerias_propias\comun\comun.h
+
+1654242240 e:\programacion\librerias_propias\tdalistaimpldinamica\tdalistaimpldinamica.h
+	"../Nodo/Nodo.h"
+	<stdio.h>
+
+1654381626 e:\programacion\librerias_propias\nodo\nodo.h
+	<stddef.h>
+	<stdlib.h>
+	<memory.h>
+	"../Comun/comun.h"
+
